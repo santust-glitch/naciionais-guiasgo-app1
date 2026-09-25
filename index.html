@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lojas Nobre (Madenobre Madereira LTDA) - Madeira, artefatos, ferragens, ferramentas e materiais de construção em Dourados/MS. CNPJ: 09.050.294/0001-30">
+    <meta name="keywords" content="madeireira, madeira, ferragens, ferramentas, materiais de construção, Dourados, MS, Lojas Nobre, Madenobre, locação de mão de obra">
+    <title>Lojas Nobre | Madeira, Ferragens e Materiais de Construção em Dourados/MS</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Configurações de Cores Personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nobre: {
+                            50: '#faf8f5',
+                            100: '#f5f0e8',
+                            200: '#e8ddc9',
+                            300: '#d9c4a3',
+                            400: '#c9a776',
+                            500: '#b88a4f',
+                            600: '#a06e3a',
+                            700: '#855530',
+                            800: '#6b4429',
+                            900: '#573823',
+                        },
+                        madeira: {
+                            50: '#fdf8f3',
+                            100: '#faeee1',
+                            200: '#f4d9c2',
+                            300: '#ecbe98',
+                            400: '#e29d6c',
+                            500: '#d97e4a',
+                            600: '#cb6336',
+                            700: '#a94c2c',
+                            800: '#893e29',
+                            900: '#703525',
+                        }
+                    },
+                    fontSize: {
+                        'xs': ['0.70rem', { lineHeight: '1rem' }],
+                        'sm': ['0.80rem', { lineHeight: '1.15rem' }],
+                        'base': ['0.875rem', { lineHeight: '1.25rem' }],
+                        'lg': ['1rem', { lineHeight: '1.4rem' }],
+                        'xl': ['1.125rem', { lineHeight: '1.5rem' }],
+                        '2xl': ['1.35rem', { lineHeight: '1.7rem' }],
+                        '3xl': ['1.6rem', { lineHeight: '1.9rem' }],
+                        '4xl': ['2rem', { lineHeight: '2.2rem' }],
+                        '5xl': ['2.5rem', { lineHeight: '2.7rem' }],
+                        '6xl': ['3rem', { lineHeight: '3.2rem' }],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(87, 56, 35, 0.8), rgba(87, 56, 35, 0.8)), url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #cb6336;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .card-img {
+            transition: transform 0.5s ease;
+        }
+        .card-hover:hover .card-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 text-base">
 
+    <!-- Header / Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-tree text-2xl text-nobre-700"></i>
+                <div>
+                    <h1 class="text-xl font-bold text-nobre-800 leading-tight">Lojas Nobre</h1>
+                    <p class="text-xs text-gray-500">Madeireira & Materiais de Construção</p>
+                </div>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden text-xl text-nobre-700 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul id="menu" class="hidden md:flex space-x-5 text-sm text-nobre-700 font-medium w-full md:w-auto mt-4 md:mt-0">
+                <li><a href="#home" class="hover:text-madeira-600 transition">Início</a></li>
+                <li><a href="#sobre" class="hover:text-madeira-600 transition">Quem Somos</a></li>
+                <li><a href="#produtos" class="hover:text-madeira-600 transition">Produtos</a></li>
+                <li><a href="#servicos" class="hover:text-madeira-600 transition">Serviços</a></li>
+                <li><a href="#diferenciais" class="hover:text-madeira-600 transition">Diferenciais</a></li>
+                <li><a href="#contato" class="hover:text-madeira-600 transition">Contato</a></li>
+                <li><a href="#localizacao" class="hover:text-madeira-600 transition">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg h-[420px] flex items-center justify-center text-center text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">Lojas Nobre</h2>
+                <p class="text-lg md:text-xl mb-6 drop-shadow-md max-w-3xl mx-auto">
+                    Madeira, ferragens, ferramentas e materiais de construção com qualidade e tradição em Dourados/MS desde 2007.
+                </p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="tel:+556733511770" class="bg-madeira-600 hover:bg-madeira-700 text-white font-semibold py-2.5 px-6 rounded-full transition shadow-lg inline-flex items-center text-sm">
+                        <i class="fas fa-phone-alt mr-2"></i> (67) 3351-1770
+                    </a>
+                    <a href="#produtos" class="bg-white text-nobre-800 hover:bg-gray-100 font-semibold py-2.5 px-6 rounded-full transition shadow-lg text-sm">
+                        Ver Produtos
+                    </a>
+                    <a href="https://maps.google.com/?q=Rua+Coronel+Ponciano+de+Mattos+Pereira+500+Dourados+MS" target="_blank" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-nobre-800 font-semibold py-2.5 px-6 rounded-full transition shadow-lg text-sm">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Como Chegar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Informações Rápidas -->
+        <section class="bg-nobre-800 text-white py-4">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs md:text-sm">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-calendar-alt text-madeira-400 text-xl mb-1"></i>
+                        <span class="font-semibold">Desde 2007</span>
+                        <span class="text-gray-300">Quase 20 anos de tradição</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-check-circle text-madeira-400 text-xl mb-1"></i>
+                        <span class="font-semibold">Situação Ativa</span>
+                        <span class="text-gray-300">Empresa regularizada</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-truck text-madeira-400 text-xl mb-1"></i>
+                        <span class="font-semibold">Entrega em Dourados</span>
+                        <span class="text-gray-300">Consulte a região</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-hand-holding-usd text-madeira-400 text-xl mb-1"></i>
+                        <span class="font-semibold">Preços Competitivos</span>
+                        <span class="text-gray-300">Orçamentos sob consulta</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quem Somos / Sobre -->
+        <section id="sobre" class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Quem Somos</h3>
+                <div class="grid md:grid-cols-2 gap-10 items-start mt-8">
+                    <div class="space-y-3">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior da loja de madeira com tábuas empilhadas" class="rounded-lg shadow-xl w-full h-64 object-cover">
+                        <div class="grid grid-cols-2 gap-3">
+                            <img src="https://images.unsplash.com/photo-1611021061285-9f0c5b1c1c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Madeiras variadas em estoque" class="rounded-lg shadow-md w-full h-32 object-cover">
+                            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ferramentas manuais organizadas" class="rounded-lg shadow-md w-full h-32 object-cover">
+                        </div>
+                    </div>
+                    <div class="text-gray-600 leading-relaxed space-y-3 text-sm">
+                        <p>
+                            A <strong>Lojas Nobre</strong>, registrada sob a razão social <strong>Madenobre Madereira LTDA</strong> e CNPJ <strong>09.050.294/0001-30</strong>, é uma empresa solidamente estabelecida em Dourados, Mato Grosso do Sul. 
+                            Fundada em <strong>12/09/2007</strong>, construímos uma trajetória de quase duas décadas servindo construtores, marceneiros, profissionais da construção civil e clientes finais.
+                        </p>
+                        <p>
+                            Nossa atividade principal é o <strong>comércio varejista de madeira e artefatos</strong>. Ao longo dos anos, expandimos nossa atuação para atender de forma completa as necessidades do setor, oferecendo também ferragens, ferramentas, materiais de construção em geral e serviços de locação de mão de obra temporária.
+                        </p>
+                        <p>
+                            Administrada pelo sócio-administrador <strong>Jose Aparecido Pereira</strong>, a Lojas Nobre tem como pilares a qualidade dos produtos, a honestidade no atendimento e o compromisso com o desenvolvimento da região.
+                        </p>
+                        <h4 class="font-bold text-nobre-800 text-base mt-4 mb-2">Dados Cadastrais</h4>
+                        <ul class="space-y-1.5 text-sm">
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Situação Cadastral:</strong> Ativa desde 24/11/2021</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Data de Abertura:</strong> 12/09/2007</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Natureza Jurídica:</strong> Sociedade Empresária Limitada</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Porte:</strong> Micro Empresa</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Capital Social:</strong> R$ 10.000,00</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Tipo:</strong> Matriz</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Opção pelo MEI:</strong> Não</li>
+                            <li><i class="fas fa-check-circle text-madeira-500 mr-2"></i> <strong>Opção pelo Simples:</strong> Não</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos / Atividades -->
+        <section id="produtos" class="py-12 bg-nobre-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Nossos Produtos</h3>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8 text-sm">
+                    Trabalhamos com uma linha completa de produtos para atender desde pequenas reformas até grandes obras. Confira abaixo as principais categorias.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition">
+                        <div class="overflow-hidden h-40">
+                            <img src="https://images.unsplash.com/photo-1611021061285-9f0c5b1c1c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Madeira e artefatos de madeira" class="w-full h-full object-cover card-img">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg font-bold text-nobre-800 mb-2">Madeira e Artefatos</h4>
+                            <p class="text-gray-600 text-xs leading-relaxed">
+                                Tábuas, vigas, caibros, ripas, compensados, madeirite, sarrafos e diversos itens em madeira para construção e marcenaria.
+                            </p>
+                            <p class="text-xs text-madeira-600 mt-2 font-semibold">CNAE 47.44-0-02</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition">
+                        <div class="overflow-hidden h-40">
+                            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ferragens e ferramentas" class="w-full h-full object-cover card-img">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg font-bold text-nobre-800 mb-2">Ferragens e Ferramentas</h4>
+                            <p class="text-gray-600 text-xs leading-relaxed">
+                                Parafusos, pregos, dobradiças, fechaduras, correntes, ferramentas manuais e elétricas das melhores marcas.
+                            </p>
+                            <p class="text-xs text-madeira-600 mt-2 font-semibold">CNAE 47.44-0-01</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition">
+                        <div class="overflow-hidden h-40">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Materiais de construção em geral" class="w-full h-full object-cover card-img">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg font-bold text-nobre-800 mb-2">Materiais de Construção</h4>
+                            <p class="text-gray-600 text-xs leading-relaxed">
+                                Cimento, areia, brita, tijolos, telhas, tintas e tudo o que você precisa para sua obra em um só lugar.
+                            </p>
+                            <p class="text-xs text-madeira-600 mt-2 font-semibold">CNAE 47.44-0-99</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition">
+                        <div class="overflow-hidden h-40">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Locação de mão de obra temporária" class="w-full h-full object-cover card-img">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg font-bold text-nobre-800 mb-2">Locação de Mão de Obra</h4>
+                            <p class="text-gray-600 text-xs leading-relaxed">
+                                Fornecimento de mão de obra temporária qualificada para apoiar sua obra ou projeto com segurança.
+                            </p>
+                            <p class="text-xs text-madeira-600 mt-2 font-semibold">CNAE 78.20-5-00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galeria Adicional de Produtos -->
+                <div class="mt-10">
+                    <h4 class="text-xl font-bold text-nobre-800 text-center mb-6">Mais Itens do Nosso Estoque</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="relative rounded-lg overflow-hidden shadow-md group">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tintas e acabamentos" class="w-full h-32 object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-2">
+                                <span class="text-white text-xs font-semibold">Tintas e Acabamentos</span>
+                            </div>
+                        </div>
+                        <div class="relative rounded-lg overflow-hidden shadow-md group">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ferramentas elétricas" class="w-full h-32 object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-2">
+                                <span class="text-white text-xs font-semibold">Ferramentas Elétricas</span>
+                            </div>
+                        </div>
+                        <div class="relative rounded-lg overflow-hidden shadow-md group">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Materiais hidráulicos" class="w-full h-32 object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-2">
+                                <span class="text-white text-xs font-semibold">Hidráulica</span>
+                            </div>
+                        </div>
+                        <div class="relative rounded-lg overflow-hidden shadow-md group">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Materiais elétricos" class="w-full h-32 object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-2">
+                                <span class="text-white text-xs font-semibold">Elétrica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="servicos" class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Nossos Serviços</h3>
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-nobre-50 rounded-lg p-6 text-center hover:shadow-lg transition">
+                        <div class="bg-madeira-600 text-white w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cut text-xl"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-nobre-800 mb-2">Corte de Madeira</h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Realizamos cortes sob medida de tábuas, compensados e outros materiais em madeira, conforme a necessidade do seu projeto.
+                        </p>
+                    </div>
+                    <div class="bg-nobre-50 rounded-lg p-6 text-center hover:shadow-lg transition">
+                        <div class="bg-madeira-600 text-white w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-truck-loading text-xl"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-nobre-800 mb-2">Entrega de Materiais</h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Entregamos os produtos adquiridos em Dourados e região. Consulte as condições de frete no momento do pedido.
+                        </p>
+                    </div>
+                    <div class="bg-nobre-50 rounded-lg p-6 text-center hover:shadow-lg transition">
+                        <div class="bg-madeira-600 text-white w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-nobre-800 mb-2">Locação de Mão de Obra</h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Fornecemos profissionais qualificados para atuar temporariamente em sua obra, com toda a segurança e formalização.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section id="diferenciais" class="py-12 bg-nobre-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Por Que Escolher a Lojas Nobre?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-award text-madeira-500 mr-2"></i> Tradição e Experiência
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Quase duas décadas no mercado de Dourados, atendendo com seriedade e conhecimento técnico.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-boxes text-madeira-500 mr-2"></i> Estoque Variado
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Grande variedade de madeiras, ferragens, ferramentas e materiais de construção em um só local.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-user-friends text-madeira-500 mr-2"></i> Atendimento Personalizado
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Equipe pronta para orientar você na escolha do produto ideal para sua necessidade e orçamento.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-balance-scale text-madeira-500 mr-2"></i> Preços Competitivos
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Condições comerciais justas, com orçamentos personalizados para obras de diferentes portes.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-shield-alt text-madeira-500 mr-2"></i> Empresa Regularizada
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Situação cadastral ativa, com CNPJ válido e administração identificada. Transparência total.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-madeira-500">
+                        <h4 class="font-bold text-nobre-800 mb-2 flex items-center text-sm">
+                            <i class="fas fa-map-marked-alt text-madeira-500 mr-2"></i> Localização Privilegiada
+                        </h4>
+                        <p class="text-gray-600 text-xs leading-relaxed">
+                            Fácil acesso na Rua Coronel Ponciano de Mattos Pereira, no Parque dos Jequitibas, em Dourados/MS.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Comprar / Passo a Passo -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Como Comprar</h3>
+                <div class="grid md:grid-cols-4 gap-6 mt-8">
+                    <div class="text-center">
+                        <div class="bg-madeira-100 text-madeira-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">1</div>
+                        <h4 class="font-bold text-nobre-800 text-sm mb-1">Escolha os Produtos</h4>
+                        <p class="text-gray-600 text-xs">Analise nosso site ou venha até a loja conhecer o estoque pessoalmente.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-madeira-100 text-madeira-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">2</div>
+                        <h4 class="font-bold text-nobre-800 text-sm mb-1">Solicite Orçamento</h4>
+                        <p class="text-gray-600 text-xs">Entre em contato por telefone, e-mail ou formulário com sua lista de materiais.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-madeira-100 text-madeira-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">3</div>
+                        <h4 class="font-bold text-nobre-800 text-sm mb-1">Confirme o Pedido</h4>
+                        <p class="text-gray-600 text-xs">Após aprovar o orçamento, formalizamos o pedido e combinamos a entrega ou retirada.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-madeira-100 text-madeira-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">4</div>
+                        <h4 class="font-bold text-nobre-800 text-sm mb-1">Receba os Materiais</h4>
+                        <p class="text-gray-600 text-xs">Retire na loja ou receba em seu endereço conforme combinado previamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-12 bg-nobre-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-nobre-800 mb-10 section-title">Fale Conosco</h3>
+                <div class="grid md:grid-cols-2 gap-10 mt-8">
+                    <!-- Informações de Contato -->
+                    <div class="space-y-5 text-sm">
+                        <p class="text-gray-600 mb-3">
+                            Nossa equipe está à disposição para atender você. Entre em contato para consultar disponibilidade de produtos, preços e condições especiais para sua obra ou projeto.
+                        </p>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-madeira-100 p-3 rounded-full">
+                                <i class="fas fa-phone-alt text-madeira-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-nobre-800 text-sm">Telefones</h4>
+                                <p class="text-gray-600">(67) 3351-1770</p>
+                                <p class="text-gray-600">(67) 3416-4600</p>
+                                <a href="tel:+556733511770" class="text-madeira-600 text-xs hover:underline">Ligar agora</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-madeira-100 p-3 rounded-full">
+                                <i class="fas fa-envelope text-madeira-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-nobre-800 text-sm">E-mail</h4>
+                                <p class="text-gray-600">contato@orteco.com.br</p>
+                                <a href="mailto:contato@orteco.com.br" class="text-madeira-600 text-xs hover:underline">Enviar E-mail</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-madeira-100 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-madeira-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-nobre-800 text-sm">Endereço</h4>
+                                <p class="text-gray-600">
+                                    Rua Coronel Ponciano de Mattos Pereira, 500<br>
+                                    Parque dos Jequitibas<br>
+                                    Dourados - MS, CEP: 79839-600
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-madeira-100 p-3 rounded-full">
+                                <i class="fas fa-user-tie text-madeira-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-nobre-800 text-sm">Responsável</h4>
+                                <p class="text-gray-600">Jose Aparecido Pereira</p>
+                                <p class="text-gray-500 text-xs">Sócio-Administrador</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-madeira-100 p-3 rounded-full">
+                                <i class="fas fa-clock text-madeira-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-nobre-800 text-sm">Horário de Atendimento</h4>
+                                <p class="text-gray-600">Segunda a Sexta: 7h30 às 18h</p>
+                                <p class="text-gray-600">Sábado: 7h30 às 12h</p>
+                                <p class="text-gray-500 text-xs">Consulte feriados</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Contato -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-nobre-800 mb-4">Envie uma mensagem</h4>
+                       
